@@ -1,6 +1,6 @@
 {
   "name": "typescript-plugin-lodash",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A simple typescript transform to cherry-pick Lodash modules so you don’t have to.",
   "main": "lib/index.js",
   "types": "src/index.ts",
