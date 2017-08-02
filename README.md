@@ -5,7 +5,7 @@ A simple typescript transform to cherry-pick Lodash modules so you don’t have 
 ### Example
 
 Transforms
-```
+```ts
 import { map } from 'lodash';
 import { add } from 'lodash/fp';
 
@@ -14,7 +14,7 @@ map([1, 2, 3], addOne);
 ```
 roughly to
 
-```
+```ts
 import * as map from 'lodash/map';
 import * as add from 'lodash/fp/add';
 
@@ -51,4 +51,9 @@ var config = {
 
 ## Notice
 
-No support `* as _` 
+1. **No supports for `* as _`**
+2. `lodash-es` will be force transformed to `lodash`
+
+### `alias` in Webpack
+
+please use `{ "lodash-es": "lodash" }` to replace `lodash-es` to `lodash` for smaller bundle size.

@@ -25,11 +25,13 @@ console.log(find, map);`,
   dest: `import * as lodashFind from "lodash/find";
 import * as lodashMap from "lodash/map";`,
 }, {
-  title: "test with lodash-es and lodash/fp",
-  src: `import { find } from "lodash-es";
-import { map } from "lodash/fp";`,
-  dest: `import find from "lodash-es/find";
-import * as map from "lodash/fp/map";`,
+  title: "test with lodash/fp",
+  src: `import { map } from "lodash/fp";`,
+  dest: `import * as map from "lodash/fp/map";`,
+}, {
+  title: "test with lodash-es and force to lodash",
+  src: `import { map } from "lodash-es";`,
+  dest: `import * as map from "lodash/map";`,
 }]
 
 describe("test cases", () => {
