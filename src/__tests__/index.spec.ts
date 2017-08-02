@@ -9,6 +9,10 @@ const cases = [{
   src: `import * as _ from "lodash";`,
   dest: `import * as _ from "lodash";`,
 }, {
+  title: "ignore interfaces",
+  src: `import { Dictionary } from "lodash";`,
+  dest: `import { Dictionary } from "lodash";`,
+}, {
   title: "test simple named imports",
   src: `import { find, map } from "lodash";
 console.log(find, map);`,
