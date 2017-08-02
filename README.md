@@ -26,6 +26,28 @@ map([1, 2, 3], addOne);
 
 like https://github.com/Igorbek/typescript-plugin-styled-components
 
+```ts
+// 1. import default from the plugin module
+import { createLodashTransformer } from 'typescript-plugin-lodash');
+
+// 2. add getCustomTransformer method to the loader config
+var config = {
+    ...
+    module: {
+        rules: [
+            {
+                test: /\.tsx?$/,
+                loader: 'ts-loader',
+                options: {
+                    ... // other loader's options
+                    getCustomTransformers: () => ({ before: [createLodashTransformer()] })
+                }
+            }
+        ]
+    }
+    ...
+};
+```
 
 ## Notice
 
