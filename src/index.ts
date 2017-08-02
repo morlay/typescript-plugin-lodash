@@ -27,6 +27,15 @@ export const createLodashTransformer = (): ts.TransformerFactory<ts.SourceFile> 
               const propertyName = element.propertyName ? element.propertyName!.text : name
 
               if (isExposableLodashMethod(propertyName)) {
+                if (moduleName === "lodash-es") {
+                  return ts.createImportDeclaration(
+                    undefined,
+                    undefined,
+                    ts.createImportClause(ts.createIdentifier(name), undefined),
+                    ts.createLiteral(`${moduleName}/${propertyName}`),
+                  )
+                }
+
                 return ts.createImportDeclaration(
                   undefined,
                   undefined,
@@ -34,6 +43,7 @@ export const createLodashTransformer = (): ts.TransformerFactory<ts.SourceFile> 
                   ts.createLiteral(`${moduleName}/${propertyName}`),
                 )
               }
+
               return ts.createImportDeclaration(
                 undefined,
                 undefined,

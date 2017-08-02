@@ -28,7 +28,7 @@ import * as lodashMap from "lodash/map";`,
   title: "test with lodash-es and lodash/fp",
   src: `import { find } from "lodash-es";
 import { map } from "lodash/fp";`,
-  dest: `import * as find from "lodash-es/find";
+  dest: `import find from "lodash-es/find";
 import * as map from "lodash/fp/map";`,
 }]
 
